@@ -5,7 +5,6 @@ public class GuessingGame {
     private Scanner reader;
 
     public GuessingGame() {
-        // use only this scanner, othervise the tests do not work
         this.reader = new Scanner(System.in);
     }
 
