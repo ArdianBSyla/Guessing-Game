@@ -11,12 +11,11 @@ public class GuessingGame {
     public void play(int lowerLimit, int upperLimit) {
         instructions(lowerLimit, upperLimit);
         int num = average(lowerLimit, upperLimit);
-        // write the guessing logic here
+        // here we are writing the guessing logic
         while(true){
             if(lowerLimit==upperLimit) {System.out.println("The number you're thinking of is " + num);break;}
             boolean b = isGreaterThan(num);
             if(lowerLimit==num && !b){
-                //num = lowerLimit;
                 System.out.println("The number you're thinking of is " + num);
                 break;
             }
@@ -63,7 +62,7 @@ public class GuessingGame {
 
     // a helper method:
     public static int howManyTimesHalvable(int number) {
-        // we create a base two logarithm  of the given value
+        // we created a base two logarithm  of the given value
 
         // Below we swap the base number to base two logarithms!
         return (int) (Math.log(number) / Math.log(2)) + 1;
