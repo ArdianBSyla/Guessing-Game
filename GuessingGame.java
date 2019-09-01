@@ -1,13 +1,25 @@
 import java.util.Scanner;
-
+/** Guessing Game is a game in which you guess a number
+ * and the game will ask you a few questions depending
+ * on the length of interval that will be set by the user.
+ * After these questions the game will show you in the console
+ * the number that you are thinking.
+ */
 public class GuessingGame {
 
-    private Scanner reader;
-
+    private Scanner reader; // scanner that will read the user input
+    
+    /** The GuessingGame constructor. */
     public GuessingGame() {
         this.reader = new Scanner(System.in);
     }
-
+    
+    /** play will lead the logic of the game.
+     *  This method knows when to ask another question or 
+     *  to show the number that the user was thinking
+     * @param lowerLimit - lowerLimit
+     * @param upperLimit - upperLimit
+     */
     public void play(int lowerLimit, int upperLimit) {
         instructions(lowerLimit, upperLimit);
         int num = average(lowerLimit, upperLimit);
@@ -27,11 +39,7 @@ public class GuessingGame {
                 upperLimit=num;
                 num = (upperLimit+lowerLimit)/2;
             }
-            
-            
         }
-        
-
     }
 
     /** This method will ask the user if his number is 
@@ -45,10 +53,21 @@ public class GuessingGame {
         if(yn.equals("y")) return true;
         return false;
     }
+    
+    /** average calculates the average of two numbers,
+     *  in this case the average of lower and upper limit
+     * @param firstNumber - first number of interval
+     * @param secondNumber - last number of interval
+     * @return average of two number given as parameters
+     */
     public int average(int firstNumber, int secondNumber){
         return (firstNumber+secondNumber)/2;
     }
-
+    
+    /** instruction will show in the console some instructions for the user
+     * @param lowerLimit - lower limit of interval
+     * @param upperLimit - upperlimit of interval
+     */
     public void instructions(int lowerLimit, int upperLimit) {
         int maxQuestions = howManyTimesHalvable(upperLimit - lowerLimit);
 
@@ -60,7 +79,7 @@ public class GuessingGame {
         System.out.println("");
     }
 
-    // a helper method:
+    /** howManyTimesHalvable calculates how many questions will be asked. */
     public static int howManyTimesHalvable(int number) {
         // we created a base two logarithm  of the given value
 

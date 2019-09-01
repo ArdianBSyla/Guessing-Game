@@ -1,5 +1,6 @@
 import java.util.Scanner;
-//import java.math.*;
+/** GameController will control the GuessingGame after asking the user
+ *  for length of the interval. */
 public class GameController {
     public static void main(String[] args) {
     	Scanner reader = new Scanner(System.in);
@@ -9,6 +10,6 @@ public class GameController {
     	int max = Integer.parseInt(reader.nextLine());
         GuessingGame game = new GuessingGame();
         game.play(min,max);
-	System.out.println("Thank You!!!");
+        System.out.println("Thank You!!!");
     }    
 }
